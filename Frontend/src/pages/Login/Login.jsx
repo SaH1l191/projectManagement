@@ -1,10 +1,14 @@
+// Login.jsx
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -29,13 +33,12 @@ const Login = () => {
       const data = await response.json();
 
       if (data.success) {
-        // Handle successful login (e.g., redirect to dashboard, etc.)
         console.log("Login successful!", data);
-        // You could redirect or update state here to indicate the user is logged in.
+        // After a successful login, navigate to the dashboard route.
+        navigate("/dashboard");
       } else {
-        // Handle login failure (e.g., invalid credentials)
-        console.error("Login failed: ", data.error);
-        alert(data.error); // Display the error message to the user
+        console.error("Login failed: ", data.error || data.message);
+        alert(data.error || data.message || "Login failed!");
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -44,8 +47,9 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2>Login</h2>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -55,7 +59,6 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-        <br />
 
         <label htmlFor="password">Password:</label>
         <input
@@ -66,9 +69,13 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-        <br />
 
         <button type="submit">Login</button>
+        <div className="login-switch">
+          <p>
+            Not a user? <Link to="/signup">Sign Up</Link>
+          </p>
+        </div>
       </form>
     </div>
   );
