@@ -40,7 +40,7 @@ exports.auth = async (req, res, next) => {
 // isStudent middleware
 exports.isStudent = async (req, res, next) => {
   try {
-    if (req.user.role !== "student") {
+    if (req.user.role !== "Student") {
       return res.status(400).json({
         success: false,
         message: "This is a protected route for Students",
@@ -59,7 +59,7 @@ exports.isStudent = async (req, res, next) => {
 // isInstructor middleware
 exports.isTeacher = async (req, res, next) => {
   try {
-    if (req.user.role !== "teacher") {
+    if (req.user.role !== "Teacher") {
       return res.status(400).json({
         success: false,
         message: "This is a protected route for teachers",

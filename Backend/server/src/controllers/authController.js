@@ -7,7 +7,11 @@ require("dotenv").config();
 // Sign up function
 exports.signup = async (req, res) => {
   const { username, password, role, department } = req.body;
-
+  if (!username || !password || !role || !department) {
+    return res.json({
+      message: "All fields are required" 
+    });
+  }
   try {
     const existingStudent = await Student.findOne({ username });
     const existingTeacher = await Teacher.findOne({ username });
@@ -21,7 +25,7 @@ exports.signup = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    if (role === "student") {
+    if (role === "Student") {
       const newStudent = new Student({
         username,
         password: hashedPassword,
@@ -29,7 +33,7 @@ exports.signup = async (req, res) => {
         department,
       });
       await newStudent.save();
-    } else if (role === "teacher") {
+    } else if (role === "Teacher") {
       const newTeacher = new Teacher({
         username,
         password: hashedPassword,
