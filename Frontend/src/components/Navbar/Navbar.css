@@ -1,0 +1,24 @@
+.Navbar {
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  border-bottom: 2px solid rgb(226, 226, 226);
+  background-color: #f9f9f7;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 310px;
+}
+.left-side,
+.middle-side,
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-side,
+.middle-side {
+  font-size: 24px;
+}
+.right-side {
+  font-size: 20px;
+}
