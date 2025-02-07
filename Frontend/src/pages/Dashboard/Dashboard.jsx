@@ -3,6 +3,9 @@ import "./Dashboard.css";
 import ChartOne from "../../components/Charts/ChartOne";
 import ChartTwo from "../../components/Charts/ChartTwo";
 import ChartThree from "../../components/Charts/ChartThree";
+import BarChart from "../../components/Charts/BarChart";
+import CalendarAutoLocaleExample from "../../components/Charts/Calender";
+import Calender from "../../components/Charts/Calender";
 
 const Dashboard = () => {
   return (
@@ -21,6 +24,7 @@ const Dashboard = () => {
       <div class="box box2">
         <div className="text-container">
           <h3>COMPLETED TASK</h3>
+          <h1>0</h1>
         </div>
         <div className="pie-chart">
           <ChartOne />
@@ -29,6 +33,7 @@ const Dashboard = () => {
       <div class="box box3">
         <div className="text-container">
           <h3>SUBMITTED TASK</h3>
+          <h1>0</h1>
         </div>
         <div className="pie-chart">
           <ChartTwo />
@@ -37,13 +42,18 @@ const Dashboard = () => {
       <div class="box box4">
         <div className="text-container">
           <h3>PENDING TASK</h3>
+          <h1>4</h1>
         </div>
         <div className="pie-chart">
           <ChartThree />
         </div>
       </div>
-      <div class="box box5">Overall Progress</div>
-      <div class="box box6">Progress bar | calender</div>
+      <div class="box box5">
+        <BarChart />
+      </div>
+      <div class="box box6">
+        <Calender />
+      </div>
     </div>
   );
 };
