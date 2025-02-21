@@ -16,11 +16,11 @@ const Dashboard = () => {
           <h2>welcome to</h2>
           <h1>Your Task Management Area</h1>
         </div>
-        {/* <img
-          src="./images/task-area.jpg"
+        <img
+          src="./images/task-dashboard.jpg"
           alt=""
-          style={{ width: "440px", height: "220px" }}
-        /> */}
+          style={{ width: "460px", height: "240px" }}
+        />
       </div>
       <div class="box box2">
         <div className="text-container">

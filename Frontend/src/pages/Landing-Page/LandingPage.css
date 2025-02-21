@@ -38,3 +38,8 @@ button {
 .content-wrapper p {
   padding-top: 25px;
 }
+.contentImage img {
+  height: 500px;
+  width: 100%;
+  margin-top: 17%;
+}
