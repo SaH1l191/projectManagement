@@ -4,8 +4,9 @@ import ChartOne from "../../components/Charts/ChartOne";
 import ChartTwo from "../../components/Charts/ChartTwo";
 import ChartThree from "../../components/Charts/ChartThree";
 import BarChart from "../../components/Charts/BarChart";
-import CalendarAutoLocaleExample from "../../components/Charts/Calender";
-import Calender from "../../components/Charts/Calender";
+import CalendarAutoLocaleExample from "../../components/Charts/CalendarControl.jsx";
+import Calender from "../../components/Charts/CalendarControl.jsx";
+import Calendar from "../../components/Charts/CalendarControl.jsx";
 
 const Dashboard = () => {
   return (
@@ -51,8 +52,8 @@ const Dashboard = () => {
       <div class="box box5">
         <BarChart />
       </div>
-      <div class="box box6">
-        <Calender />
+      <div class=" box6">
+        <Calendar />
       </div>
     </div>
   );

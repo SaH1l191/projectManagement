@@ -1,46 +1,38 @@
-import React, { PureComponent } from "react";
-import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-const data02 = [
-  { name: "Group A", value: 1500 },
-  { name: "Group B", value: 5000 },
-  { name: "Group C", value: 1398 },
-  { name: "Group D", value: 7800 },
-  { name: "Group E", value: 5608 },
-];
+const percentage = 70;
+const ChartTwo = () => {
+  return (
+    <div style={{ width: 150, height: 150, margin: 20 }}>
+      <CircularProgressbar
+        value={percentage}
+        text={`${percentage}%`}
+        styles={buildStyles({
+          // Rotation of path and trail, in number of turns (0-1)
+          rotation: 0.25,
 
-const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#FF6384",
-  "#36A2EB",
-];
+          // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+          strokeLinecap: "butt",
 
-export default class Example extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
-          <Pie
-            dataKey="value"
-            data={data02}
-            cx={90}
-            cy={100}
-            innerRadius={50}
-            outerRadius={80}
-          >
-            {data02.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
-    );
-  }
-}
+          // Text size
+          textSize: "16px",
+
+          // How long animation takes to go from one percentage to another, in seconds
+          pathTransitionDuration: 0.5,
+
+          // Can specify path transition in more detail, or remove it entirely
+          // pathTransition: 'none',
+
+          // Colors
+          pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+          textColor: "#C82333",
+          trailColor: "#d6d6d6",
+          backgroundColor: "#3e98c7",
+        })}
+      />
+    </div>
+  );
+};
+
+export default ChartTwo;

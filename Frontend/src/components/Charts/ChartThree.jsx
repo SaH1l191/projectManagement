@@ -2,11 +2,9 @@ import React, { PureComponent } from "react";
 import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 const data02 = [
-  { name: "Group A", value: 2400 },
-  { name: "Group B", value: 8267 },
-  { name: "Group C", value: 678 },
-  { name: "Group D", value: 1000 },
-  { name: "Group E", value: 1008 },
+  { name: "Pending Task", value: 50 },
+  { name: "Completed Task", value: 30 },
+  { name: "Submitted Task", value: 20 },
 ];
 
 const COLORS = [
@@ -21,7 +19,7 @@ const COLORS = [
 export default class Example extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={430}>
         <PieChart>
           <Pie
             dataKey="value"
@@ -29,7 +27,7 @@ export default class Example extends PureComponent {
             cx={90}
             cy={100}
             innerRadius={50}
-            outerRadius={80}
+            outerRadius={70}
           >
             {data02.map((entry, index) => (
               <Cell

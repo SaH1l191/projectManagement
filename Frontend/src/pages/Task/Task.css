@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cards {
+  height: 300px;
+  width: 400px;
+  box-shadow: 1px 1px 5px rgb(211, 210, 210);
+  border-radius: 20px;
+  margin: 20px;
+}
+.heading {
+  border-bottom: 1px solid rgb(223, 219, 219);
+  text-align: center;
+}
+.subtasks {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(223, 219, 219);
+}
+.subtasks input {
+  margin: 10px;
+}

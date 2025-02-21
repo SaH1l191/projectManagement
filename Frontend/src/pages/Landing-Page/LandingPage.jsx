@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Navlink } from "react";
 import "./LandingPage.css";
+import Login from "../Login/Login";
 
 const LandingPage = () => {
   return (
@@ -11,6 +12,7 @@ const LandingPage = () => {
           </div>
           <div className="login-side">
             <button className="sign-in">sign-in</button>
+
             <button className="sign-up">sign-up</button>
           </div>
         </div>
