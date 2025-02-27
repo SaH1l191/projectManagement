@@ -1,9 +1,11 @@
-import React, { Navlink } from "react";
+import React from "react";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="LandingPage">
@@ -12,16 +14,13 @@ const LandingPage = () => {
             <h3>TASK-MASTER</h3>
           </div>
           <div className="login-side">
-            <button
-              className="sign-in"
-              onClick={() => {
-                <SignUp />;
-              }}
-            >
+            <button className="sign-in" onClick={() => navigate("/login")}>
               sign-in
             </button>
 
-            <button className="sign-up">sign-up</button>
+            <button className="sign-up" onClick={() => navigate("/signup")}>
+              sign-up
+            </button>
           </div>
         </div>
         <div className="content-wrapper">
@@ -32,7 +31,7 @@ const LandingPage = () => {
             <br></br> Get started now!
           </p>
           <div className="contentImage">
-            <img src="./images/dashboard-landing.PNG" alt="" />
+            <img src="./images/localhost-dashboard.png" alt="" />
           </div>
         </div>
       </div>

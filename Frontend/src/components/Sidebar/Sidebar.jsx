@@ -34,6 +34,13 @@ const Sidebar = ({ onItemClick }) => {
               <p onClick={() => onItemClick("Submitted")}>submitted</p>
             </NavLink>
           </div>
+
+          <div className="option">
+            <NavLink to="review" className="nav">
+              <img src="./images/review.png" alt="" />
+              <p onClick={() => onItemClick("Reviews")}>reviews</p>
+            </NavLink>
+          </div>
         </div>
       </div>
     </>

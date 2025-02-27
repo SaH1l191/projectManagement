@@ -3,8 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .cards {
-  height: 300px;
+  height: 450px;
   width: 400px;
   box-shadow: 1px 1px 5px rgb(211, 210, 210);
   border-radius: 20px;
@@ -12,12 +16,15 @@
 }
 .heading {
   border-bottom: 1px solid rgb(223, 219, 219);
+  padding: 15px;
   text-align: center;
 }
 .subtasks {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-bottom: 1px solid rgb(223, 219, 219);
+  padding: 20px;
 }
 .subtasks input {
   margin: 10px;

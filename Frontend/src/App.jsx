@@ -14,6 +14,7 @@ import Submit from "./pages/Submit/Submit";
 import LandingPage from "./pages/Landing-Page/LandingPage";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import Review from "./pages/Review/Review";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="task" element={<Task />} />
           <Route path="completed" element={<Completed />} />
           <Route path="submit" element={<Submit />} />
+          <Route path="review" element={<Review />} />
         </Route>
       </Routes>
     </Router>
